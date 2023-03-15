@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 10:43:42 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/14 16:00:50 by jsanger          ###   ########.fr       */
+/*   Created: 2023/03/14 17:39:17 by jsanger           #+#    #+#             */
+/*   Updated: 2023/03/14 17:39:50 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_isdigit(int c)
+char	*ft_bzero(char *str, size_t length)
 {
-	if ((c >= 48 && c <= 59))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
+	int	i;
 
-// int main()
-// {
-// 	char i;
-// 	i = 'a';
-// 	printf("%d", ft_isdigit(i));
-// 	return (0);
-// }
+	i = 0;
+	while (str[i] != '\0' && i < length)
+	{
+		str[i] = '/0';
+		i++;
+	}
+	return (str);
+}

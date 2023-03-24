@@ -6,9 +6,11 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:50:42 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/14 15:39:44 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/24 13:46:04 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {

@@ -1,11 +1,23 @@
-// #include <string.h>
-// #include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/24 09:29:07 by jsanger           #+#    #+#             */
+/*   Updated: 2023/03/24 13:42:50 by jsanger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+#include <string.h>
+#include <stdio.h>
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t i;
-	char *str1;
-	char *str2;
+	size_t	i;
+	char	*str1;
+	char	*str2;
 
 	str1 = (char *)dest;
 	str2 = (char *)src;
@@ -16,8 +28,8 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 		i++;
 	}
 	str1[i] = '\0';
-	dest = (char*)str1;
-	return(dest);
+	dest = (char *)str1;
+	return (dest);
 }
 
 // int main()

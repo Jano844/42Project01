@@ -1,48 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/24 08:30:22 by jsanger           #+#    #+#             */
+/*   Updated: 2023/03/24 09:47:00 by jsanger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-int ft_digits(int n)
+int	ft_digits(int n)
 {
-    int digets;
+	int	digets;
 
-    digets = 0;
-    while (n > 9)
-    {
-        digets++;
-        n /= 10;
-    }
-    return(digets + 1);
+	digets = 0;
+	while (n > 9)
+	{
+		digets++;
+		n /= 10;
+	}
+	return (digets + 1);
 }
 
-
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int digets;
-    int negativ;
-    char *mall;
+	int		negativ;
+	int		digets;
+	char	*mall;
 
-    negativ = 0;
-    digets = 0;
-    if(n < 0)
-    {
-        negativ++;
-        n *= -1;
-    }
-    digets += ft_digits(n);
-    if (!(mall = malloc(sizeof(char) * (negativ + digets + 1))));
-		return ('\0');
-    if(mall == 0)
-        return('\0');
-    if (negativ != 0)
-        *(mall) = '-';
-    *(mall + (digets + negativ + 1)) = '\0';
-    while (digets--)
+	negativ = 0;
+	digets = 0;
+	if (n < 0)
 	{
-		*(mall + digets) = n % 10 + '0';
+		negativ++;
+		n *= -1;
+	}
+	digets += ft_digits(n);
+	mall = (char *)malloc(sizeof(char) * (negativ + digets + 1));
+	if (mall == 0)
+		return (NULL);
+	if (negativ != 0)
+		*(mall) = '-';
+	*(mall + (digets + negativ + 1)) = '\0';
+	while (digets--)
+	{
+		*(mall + digets + 1) = n % 10 + '0';
 		n = n / 10;
 	}
-    return(mall);
+	return (mall);
 }
 
 // int main()

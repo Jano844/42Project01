@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/24 11:48:19 by jsanger           #+#    #+#             */
+/*   Updated: 2023/03/24 13:46:33 by jsanger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    unsigned int    i;
-	char    *str;
+	unsigned int	i;
+	char			*str;
 
 	if (!s)
-		return ('\0');
+		return (NULL);
 	i = 0;
-    while (s[i] != '\0')
-        i++;
-    str = malloc(sizeof(char) * (i + 1));
-    if (str == NULL)
-		return ('\0');
-    i = 0;
+	while (s[i] != '\0')
+		i++;
+	str = malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
+		return (NULL);
+	i = 0;
 	while (s[i] != '\0')
 	{
 		str[i] = f(i, s[i]);

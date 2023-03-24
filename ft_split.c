@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/24 09:38:25 by jsanger           #+#    #+#             */
+/*   Updated: 2023/03/24 13:45:01 by jsanger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
 static int	count_words(const char *str, char c)
 {
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -36,7 +48,7 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -44,7 +56,7 @@ char		**ft_split(char const *s, char c)
 	char	**split;
 
 	if (!s || !(split = malloc((count_words(s, c) + 1) * sizeof(char *))))
-		return (0);
+		return (NULL);
 	i = 0;
 	j = 0;
 	index = -1;
@@ -63,15 +75,15 @@ char		**ft_split(char const *s, char c)
 	return (split);
 }
 
-int main()
-{
-    char str[] = "abc.abc.canasft.d12";
-    char split = '.';
-    char *arr;
+// int main()
+// {
+//     char str[] = "abc.abc.canasft.d12";
+//     char split = '.';
+//     char *arr;
 
-    ft_split(str, split);
-    printf("%s", arr);
-    free(arr);
-    //printf("%s\n", );
-    return(0);
-}
+//     ft_split(str, split);
+//     printf("%s", arr);
+//     free(arr);
+//     //printf("%s\n", );
+//     return(0);
+// }

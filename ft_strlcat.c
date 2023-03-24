@@ -6,17 +6,17 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:25:51 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/15 11:38:36 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/24 08:14:57 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-size_t ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	unsigned int	i;
-	unsigned int 	j;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;
@@ -34,20 +34,20 @@ size_t ft_strlcat(char *dest, char *src, size_t size)
 	return (i);
 }
 
-int main()
-{
-	char dest[] = "Hello-";
-	char src[] = "World";
+// int main()
+// {
+// 	char dest[] = "Hello-";
+// 	char src[] = "World";
 
-	char dest1[] = "Hello-";
-	char src1[] = "World";
+// 	char dest1[] = "Hello-";
+// 	char src1[] = "World";
 
-	unsigned int n = 3;
+// 	unsigned int n = 3;
 
-	printf("%zu\n", ft_strlcat(dest, src, n));
-	printf("%lu\n", strlcat(dest1, src1, n));
+// 	printf("%zu\n", ft_strlcat(dest, src, n));
+// 	printf("%lu\n", strlcat(dest1, src1, n));
 
-	printf("%s\n", dest);
-	printf("%s\n", dest1);
-	return (0);
-}
+// 	printf("%s\n", dest);
+// 	printf("%s\n", dest1);
+// 	return (0);
+// }

@@ -6,11 +6,13 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:39:17 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/14 17:39:50 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/24 13:38:27 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_bzero(void *s, size_t n)
+#include <stdio.h>
+
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 

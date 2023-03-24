@@ -8,7 +8,7 @@ char *ft_strdup(char *str)
     i = 0;
     while(str[i] != '\0')
         i++;
-    temp = malloc(1 * (i + 1));
+    temp = malloc(sizeof(char) * (i + 1));
     if (temp == 0)
         return('\0');
     i = 0;

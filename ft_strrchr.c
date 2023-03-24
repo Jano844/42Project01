@@ -20,13 +20,13 @@ char *ft_strrchr(const char *str, int let)
     }
     if(*str == let)
         return((char *)str);
-    return('\0');
+    return("\0");
 }
 
 // int main()
 // {
-//     char str1[] = "HelloWorld";
-//     char str2[] = "HelloWorld";
+//     char str1[] = "HelloWorlWd";
+//     char str2[] = "HelloWorlWd";
 //     int letter = 'W';
 
 //     printf("%s\n", ft_strrchr(str1, letter));

@@ -6,7 +6,7 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:10:33 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 14:46:24 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/24 15:35:04 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		count++;
 	start = ft_start(s1, set);
 	end = ft_end(s1, set, count - 1) + 1;
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
 	temp = malloc(sizeof(char) * (end - start + 1));
 	if (temp == 0)
 		return (NULL);
+	printf("%d\n", start);
+	printf("%d\n", end);
 	while (start < end)
 	{
 		temp[j] = s1[start];
@@ -95,13 +97,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (temp);
 }
 
-// int main()
-// {
-//     char str[] = "aaaaaaabcccHelloabcWorldababcaabcabca";
-//     char set[] = "abc";
-//     char *arr;
-//     arr = ft_strtrim(str, set);
-//     printf("%s", arr);
-//     free(arr);
-//     return(0);
-// }
+int main()
+{
+    char str[] = "abcHelloabcWorldabc";
+    char set[] = "abc";
+    char *arr;
+    arr = ft_strtrim(str, set);
+    printf("%s", arr);
+    free(arr);
+    return(0);
+}

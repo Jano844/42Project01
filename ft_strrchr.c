@@ -1,26 +1,35 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/26 21:08:39 by jsanger           #+#    #+#             */
+/*   Updated: 2023/03/27 20:43:52 by jsanger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strrchr(const char *str, int let)
+#include "libft.h"
+
+char	*ft_strrchr(const char *str, int let)
 {
-    int i;
+	char		*last;
+	char		find;
+	size_t		i;
 
-    i = 0;
-    while (*str != '\0')
-    {
-        i++;
-        str++;
-    }
-    while (i > 0)
-    {
-        if(*str == let)
-            break;
-        str--;
-        i--;
-    }
-    if(*str == let)
-        return((char *)str);
-    return("\0");
+	last = (char *)str;
+	find = (char)let;
+	i = ft_strlen(str);
+	while (i > 0)
+	{
+		if (last[i] == find)
+			return (last + i);
+		i--;
+	}
+	if (last[i] == find)
+		return (last);
+	return (0);
 }
 
 // int main()
@@ -28,7 +37,6 @@ char *ft_strrchr(const char *str, int let)
 //     char str1[] = "HelloWorlWd";
 //     char str2[] = "HelloWorlWd";
 //     int letter = 'W';
-
 //     printf("%s\n", ft_strrchr(str1, letter));
 //     //ft_strchr(str1, letter);
 //     printf("%s\n", strrchr(str2, letter));

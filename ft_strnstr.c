@@ -6,45 +6,44 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:15:59 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 12:27:19 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/27 09:11:43 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *hays, const char *needle, size_t len)
 {
 	size_t		i;
 	size_t		j;
-	size_t		l;
 
-	i = strlen(needle);
-	j = 0;
-	if (i == 0)
-		return ((char *)hays);
 	i = 0;
-	l = 0;
-	while (hays[j] != '\0' && len > j)
+	if (*needle == '\0')
+		return ((char *)hays);
+	while (hays[i] != '\0' && i < len)
 	{
-		while (hays[j] == needle[i])
+		if (hays[i] == needle[0])
 		{
-			j++;
-			i++;
-			if (needle[i] == '\0')
-				return ((char *)hays + (j - i));
+			j = 0;
+			while (hays[i + j] == needle[j] && i + j < len)
+			{
+				if (needle[j + 1] == '\0')
+					return ((char *)hays + i);
+				j++;
+			}
 		}
-		i = 0;
-		j++;
+		i++;
 	}
-	return ((char *)hays);
+	return (NULL);
 }
 
 // int main()
 // {
-//     char hays[] = "Hallo Welt wo bist du";
-//     char needle[] = "Welt";
-//     size_t len = 10;
+//     char hays[] = "Hallo Welten wo bist du";
+//     char needle[] = "Welten";
+//     size_t len = 15;
 
 //     printf("%s\n", ft_strnstr(hays, needle, len));
 //     printf("%s", strstr(hays, needle));

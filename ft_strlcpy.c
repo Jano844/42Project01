@@ -6,7 +6,7 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 09:18:14 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/15 11:32:17 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/27 09:54:34 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,25 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	while (src[j] != '\0')
+	if (n == 0)
 	{
-		j++;
+		while (src[i])
+			i++;
+		return (i);
 	}
-	while (i >= n && src[i] != '\0')
+	while (i < n - 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (j);
+	if (i < n)
+		dest[i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }
 
 // //Wenn dest kleiner ist als source muss

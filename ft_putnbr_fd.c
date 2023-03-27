@@ -6,55 +6,34 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 09:36:57 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 09:36:59 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/27 18:11:47 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-int	ft_negativ(int n, int *negativ)
-{
-	if (n < 0)
-	{
-		*negativ = 1;
-		n *= -1;
-	}
-	return (n);
-}
+#include <stdio.h>
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	digets[10];
-	int		i;
-	int		negativ;
-	char	minus;
-
-	i = 0;
-	n = ft_negativ(n, &negativ);
-	minus = '-';
-	while (n > 9)
+	if (n == -2147483648)
 	{
-		digets[i] = (n % 10) + '0';
-		n /= 10;
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	digets[i] = (n % 10) + '0';
-	n /= 10;
-	if (negativ == 1)
-		write(fd, &minus, 1);
-	while (i >= 0)
+	if (n < 0)
 	{
-		write(fd, &digets[i], 1);
-		i--;
+		ft_putchar_fd('-', fd);
+		n = -n;
 	}
+	if (n <= 9)
+	{
+		ft_putchar_fd(n + '0', fd);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	return ;
 }
-
-// int main()
-// {
-//     int num;
-//     int fd;
-//     fd = 1;
-//     num = -1;
-//     ft_putnbr_fd(num, fd);
-// 	return 0;
-// }

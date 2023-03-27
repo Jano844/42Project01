@@ -6,24 +6,25 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 09:49:28 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 09:50:53 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/27 20:29:30 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int let)
 {
-	while (*str != '\0')
+	while ((*str != '\0'))
 	{
-		if (*str == let)
-			break ;
+		if ((unsigned char)*str == (unsigned char)let)
+			return ((char *)str);
 		str++;
 	}
-	if (*str == let)
+	if ((unsigned char)*str == (unsigned char)let)
 		return ((char *)str);
-	return ("\0");
+	return (NULL);
 }
 
 // int main()
@@ -37,3 +38,16 @@ char	*ft_strchr(const char *str, int let)
 //     printf("%s\n", strchr(str2, letter));
 //     return(0);
 // }
+
+// size_t	i;
+
+// 	i = 0;
+// 	while ((str[i] != '\0') && (str[i] != let))
+// 	{
+// 		i++;
+// 	}
+// 	if (str[i] == let)
+// 	{
+// 		return ((char *)str + i);
+// 	}
+// 	return (NULL);

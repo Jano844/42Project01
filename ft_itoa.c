@@ -6,7 +6,7 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:30:22 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 09:47:00 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/27 18:30:06 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,45 @@
 #include <string.h>
 #include <stdlib.h>
 
-int	ft_digits(int n)
+static long int	get_digits(long int n)
 {
-	int	digets;
+	long int	i;
 
-	digets = 0;
+	i = 1;
 	while (n > 9)
 	{
-		digets++;
 		n /= 10;
+		i++;
 	}
-	return (digets + 1);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	int		negativ;
-	int		digets;
-	char	*mall;
+	char		*str_num;
+	size_t		digits;
+	long int	num;
 
-	negativ = 0;
-	digets = 0;
+	num = n;
+	digits = 0;
 	if (n < 0)
 	{
-		negativ++;
-		n *= -1;
+		num *= -1;
+		digits++;
 	}
-	digets += ft_digits(n);
-	mall = (char *)malloc(sizeof(char) * (negativ + digets + 1));
-	if (mall == 0)
+	digits += get_digits(num);
+	str_num = (char *)malloc(sizeof(char) * (digits + 1));
+	if (str_num == NULL)
 		return (NULL);
-	if (negativ != 0)
-		*(mall) = '-';
-	*(mall + (digets + negativ + 1)) = '\0';
-	while (digets--)
+	*(str_num + digits) = 0;
+	while (digits--)
 	{
-		*(mall + digets + 1) = n % 10 + '0';
-		n = n / 10;
+		*(str_num + digits) = num % 10 + '0';
+		num = num / 10;
 	}
-	return (mall);
+	if (n < 0)
+		*(str_num + 0) = '-';
+	return (str_num);
 }
 
 // int main()
@@ -60,7 +60,7 @@ char	*ft_itoa(int n)
 //     int n;
 //     char *mall;
 
-//     n = -1100;
+//     n = 0;
 //     mall = ft_itoa(n);
 //     printf("%s\n", mall);
 //     free(mall);

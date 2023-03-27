@@ -6,13 +6,14 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:10:33 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 15:35:04 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/27 19:29:00 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 int	ft_start(char const *s1, char const *set)
 {
@@ -72,7 +73,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		count;
 	int		j;
-	char	*temp;
 
 	j = 0;
 	count = 0;
@@ -80,30 +80,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 		count++;
 	start = ft_start(s1, set);
 	end = ft_end(s1, set, count - 1) + 1;
-	if (!s1)
-		return (NULL);
-	temp = malloc(sizeof(char) * (end - start + 1));
-	if (temp == 0)
-		return (NULL);
-	printf("%d\n", start);
-	printf("%d\n", end);
-	while (start < end)
-	{
-		temp[j] = s1[start];
-		start++;
-		j++;
-	}
-	temp[j] = '\0';
-	return (temp);
+	return (ft_substr(s1, start, end - start));
 }
 
-int main()
-{
-    char str[] = "abcHelloabcWorldabc";
-    char set[] = "abc";
-    char *arr;
-    arr = ft_strtrim(str, set);
-    printf("%s", arr);
-    free(arr);
-    return(0);
-}
+// int main()
+// {
+//     char str[] = "abcHelloabcWorldabc";
+//     char set[] = "abc";
+//     char *arr;
+//     arr = ft_strtrim(str, set);
+//     printf("%s", arr);
+//     free(arr);
+//     return(0);
+// }

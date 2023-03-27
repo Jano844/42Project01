@@ -6,12 +6,13 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 09:29:07 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 13:42:50 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/26 20:32:35 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -19,6 +20,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*str1;
 	char	*str2;
 
+	if (!dest && !src)
+		return (0);
 	str1 = (char *)dest;
 	str2 = (char *)src;
 	i = 0;
@@ -27,7 +30,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		str1[i] = str2[i];
 		i++;
 	}
-	str1[i] = '\0';
 	dest = (char *)str1;
 	return (dest);
 }

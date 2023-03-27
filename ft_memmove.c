@@ -6,7 +6,7 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:14:27 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 13:43:25 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/26 20:41:25 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,24 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*str1;
 	char	*str2;
 
+	if (!dest && !src)
+		return (0);
 	str1 = (char *)dest;
 	str2 = (char *)src;
 	i = 0;
-	while (i < n)
+	if (dest > src)
 	{
-		str1[i] = str2[i];
-		i++;
+		while (n-- > 0)
+			str1[n] = str2[n];
 	}
-	str1[i] = '\0';
+	else
+	{
+		while (i < n)
+		{
+			str1[i] = str2[i];
+			i++;
+		}
+	}
 	dest = (char *)str1;
 	return (dest);
 }

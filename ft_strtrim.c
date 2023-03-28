@@ -6,16 +6,13 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:10:33 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/27 19:29:00 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:25:00 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
-int	ft_start(char const *s1, char const *set)
+static int	ft_start(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -42,7 +39,7 @@ int	ft_start(char const *s1, char const *set)
 	return (i);
 }
 
-int	ft_end(char const *s1, char const *set, int c)
+static int	ft_end(char const *s1, char const *set, int c)
 {
 	int	j;
 	int	l;

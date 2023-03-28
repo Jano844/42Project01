@@ -6,12 +6,10 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:15:59 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/27 09:11:43 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:24:38 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *hays, const char *needle, size_t len)

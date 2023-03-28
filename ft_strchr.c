@@ -6,12 +6,10 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 09:49:28 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/27 20:29:30 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:23:27 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *str, int let)

@@ -6,13 +6,11 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:48:19 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 13:46:33 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:24:28 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

@@ -6,13 +6,10 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:38:39 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 11:46:49 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:24:19 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)

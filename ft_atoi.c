@@ -6,12 +6,11 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:23:54 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 11:37:01 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:21:51 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

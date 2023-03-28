@@ -6,12 +6,11 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 09:18:14 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/27 09:54:34 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:24:07 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {

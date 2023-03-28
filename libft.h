@@ -6,17 +6,23 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 11:32:16 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 13:38:40 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:20:00 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -41,7 +47,7 @@ char	*ft_strchr(const char *str, int let);
 char	*ft_strdup(char *str);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlcat(char *dest, char *src, size_t size);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -52,5 +58,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+t_list	*ft_lstnew(void *content);
 
 #endif

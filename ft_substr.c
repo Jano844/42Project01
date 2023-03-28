@@ -6,13 +6,10 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 09:16:24 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/27 18:55:32 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:25:07 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)

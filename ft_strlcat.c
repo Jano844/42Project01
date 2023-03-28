@@ -6,34 +6,38 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 10:25:51 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/24 08:14:57 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/03/28 13:24:14 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	char	*s;
+	size_t	len_dest;
+	size_t	res;
+	size_t	len_src;
+	size_t	i;
 
+	s = (char *)src;
+	len_dest = ft_strlen(dest);
+	len_src = ft_strlen(s);
+	res = 0;
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
+	if (size > len_dest)
+		res = len_src + len_dest;
+	else
+		res = len_src + size;
+	while (s[i] && (len_dest + 1) < size)
 	{
+		dest[len_dest] = s[i];
+		len_dest++;
 		i++;
 	}
-	while (src[j] != '\0' && j < size - 1)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (i);
+	dest[len_dest] = '\0';
+	return (res);
 }
-
 // int main()
 // {
 // 	char dest[] = "Hello-";
@@ -50,4 +54,25 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 // 	printf("%s\n", dest);
 // 	printf("%s\n", dest1);
 // 	return (0);
+// }
+
+// size_t	ft_strlcat(char *dest, char *src, size_t size)
+// {
+// 	unsigned int	i;
+// 	unsigned int	j;
+
+// 	i = 0;
+// 	j = 0;
+// 	while (dest[i] != '\0')
+// 	{
+// 		i++;
+// 	}
+// 	while (src[j] != '\0' && j < size - 1)
+// 	{
+// 		dest[i] = src[j];
+// 		i++;
+// 		j++;
+// 	}
+// 	dest[i] = '\0';
+// 	return (i);
 // }

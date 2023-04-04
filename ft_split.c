@@ -6,7 +6,7 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 09:05:22 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/28 13:42:29 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/04/03 18:36:54 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ static char	**ft_allocate(int i, int j, char const *s, char c)
 			i++;
 		length = ft_word_length(s, c, i);
 		strings[j] = ft_substr(s, i, length);
-		if (strings == 0)
+		if (strings[j] == 0)
 		{
 			ft_free(strings, j);
 			return (NULL);
 		}
 		i += length;
 	}
-	strings[j] = 0;
+	strings[j] = NULL;
 	return (strings);
 }
 

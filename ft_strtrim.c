@@ -6,7 +6,7 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 14:10:33 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/28 13:25:00 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/09/25 18:45:28 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 	int		count;
-	int		j;
 
-	j = 0;
 	count = 0;
 	while (s1[count] != '\0')
 		count++;

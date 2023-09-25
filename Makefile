@@ -11,10 +11,6 @@ SOURCE =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c
 
 OBJECTS = $(SOURCE:.c=.o)
 
-BONUS =		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-
-BONUS_OBJECTS = $(BONUS:.c=.o)
-
 $(NAME) : $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
@@ -26,9 +22,6 @@ clean:
 	@rm -f $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean:
-	@rm -f $(OBJECTS) $(NAME) $(BONUS_OBJECTS)
+	@rm -f $(OBJECTS) $(NAME)
 
 re: fclean all
-
-bonus:	$(OBJECTS) $(BONUS_OBJECTS)
-		ar rcs $(NAME) $(OBJECTS) $(BONUS_OBJECTS)

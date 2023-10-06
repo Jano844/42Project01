@@ -6,7 +6,7 @@
 /*   By: jsanger <jsanger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:23:54 by jsanger           #+#    #+#             */
-/*   Updated: 2023/03/28 13:21:51 by jsanger          ###   ########.fr       */
+/*   Updated: 2023/10/06 13:01:10 by jsanger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	num = 0;
 	n_p = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f' || str[i] == '\r'
-		|| str[i] == '\n' || str[i] == '\v')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
